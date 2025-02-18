@@ -1,1 +1,218 @@
+class Vehicle:
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+
+    def display_info(self):
+        return f"Vehicle Make: {self.make}, Model: {self.model}"
+
+# Example usage
+car = Vehicle("Toyota", "Camry")
+print(car.display_info())
+
+
+
+
+
+class Vehicle:
+    def __init__(self, name, max_speed):
+        self.name = name
+        self.max_speed = max_speed
+
+    def display_info(self):
+        return f"{self.name} has a maximum speed of {self.max_speed} km/h."
+
+
+class Car(Vehicle):
+    def __init__(self, name, max_speed, num_doors):
+        super().__init__(name, max_speed)
+        self.num_doors = num_doors
+
+    def display_info(self):
+        return f"{self.name} is a car with {self.num_doors} doors and a maximum speed of {self.max_speed} km/h."
+
+
+class Bike(Vehicle):
+    def __init__(self, name, max_speed, type_of_bike):
+        super().__init__(name, max_speed)
+        self.type_of_bike = type_of_bike
+
+    def display_info(self):
+        return f"{self.name} is a {self.type_of_bike} bike with a maximum speed of {self.max_speed} km/h."
+
+
+# Example Usage
+car = Car("Sedan", 200, 4)
+bike = Bike("Mountain Bike", 50, "off-road")
+
+print(car.display_info())
+print(bike.display_info())
+
+
+
+
+
+
+
+class Vehicle:
+    def __init__(self, name, max_speed):
+        self.name = name
+        self.max_speed = max_speed
+
+    def display_info(self):
+        return f"{self.name} has a maximum speed of {self.max_speed} km/h."
+
+    def describe(self):
+        return f"This is a {self.name}."
+
+
+class Car(Vehicle):
+    def __init__(self, name, max_speed, num_doors):
+        super().__init__(name, max_speed)
+        self.num_doors = num_doors
+
+    def display_info(self):
+        return f"{self.name} is a car with {self.num_doors} doors and a maximum speed of {self.max_speed} km/h."
+    
+    def describe(self):
+        return f"The {self.name} is a car with {self.num_doors} doors."
+
+
+class Bike(Vehicle):
+    def __init__(self, name, max_speed, type_of_bike):
+        super().__init__(name, max_speed)
+        self.type_of_bike = type_of_bike
+
+    def display_info(self):
+        return f"{self.name} is a {self.type_of_bike} bike with a maximum speed of {self.max_speed} km/h."
+
+
+# Example Usage
+car = Car("Sedan", 200, 4)
+bike = Bike("Mountain Bike", 50, "off-road")
+
+print(car.display_info())
+print(car.describe())
+print(bike.display_info())
+
+
+
+
+
+
+
+
+
+
+class Vehicle:
+    def __init__(self, name, max_speed):
+        self.name = name
+        self.max_speed = max_speed
+
+    def display_info(self):
+        return f"{self.name} has a maximum speed of {self.max_speed} km/h."
+
+    def describe(self):
+        return f"This is a {self.name}."
+
+    def honk(self):
+        return "The vehicle honks!"
+
+
+class Car(Vehicle):
+    def __init__(self, name, max_speed, num_doors):
+        super().__init__(name, max_speed)
+        self.num_doors = num_doors
+
+    def display_info(self):
+        return f"{self.name} is a car with {self.num_doors} doors and a maximum speed of {self.max_speed} km/h."
+    
+    def describe(self):
+        return f"The {self.name} is a car with {self.num_doors} doors."
+    
+    def honk(self):
+        return "The car beeps!"
+
+
+class Bike(Vehicle):
+    def __init__(self, name, max_speed, type_of_bike):
+        super().__init__(name, max_speed)
+        self.type_of_bike = type_of_bike
+
+    def display_info(self):
+        return f"{self.name} is a {self.type_of_bike} bike with a maximum speed of {self.max_speed} km/h."
+    
+    def honk(self):
+        return "The bike rings its bell!"
+
+
+# Example Usage
+def vehicle_sound(vehicle):
+    print(vehicle.honk())
+
+car = Car("Sedan", 200, 4)
+bike = Bike("Mountain Bike", 50, "off-road")
+
+print(car.display_info())
+print(car.describe())
+print(bike.display_info())
+
+vehicle_sound(car)
+vehicle_sound(bike)
+
+
+
+
+
+
+
+class BankAccount:
+    def __init__(self, account_number, balance):
+        self.__account_number = account_number  # Private attribute
+        self.__balance = balance  # Private attribute
+
+    # Getter for account number
+    @property
+    def account_number(self):
+        return self.__account_number
+
+    # Getter for balance
+    @property
+    def balance(self):
+        return self.__balance
+
+    # Setter for balance with validation
+    @balance.setter
+    def balance(self, amount):
+        if amount < 0:
+            raise ValueError("Balance cannot be negative.")
+        self.__balance = amount
+
+    # Method to add funds
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+        else:
+            raise ValueError("Deposit amount must be positive.")
+
+    # Method to withdraw funds with validation
+    def withdraw(self, amount):
+        if 0 < amount <= self.__balance:
+            self.__balance -= amount
+        else:
+            raise ValueError("Invalid withdrawal amount.")
+
+# Usage
+account = BankAccount("123456789", 1000)
+print(account.balance)  # Access via getter
+account.deposit(500)
+print(account.balance)  # Updated balance
+
+
+
+
+
+
+
+
 
