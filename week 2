@@ -6,13 +6,14 @@ my_numbers = [1, 2, 3, 4, 5]
 print(sum_list(my_numbers))  # Output: 15
 
 
-
+#Print even numbers between 1 and 20 using a loop.
 for num in range(2, 21, 2):  
     print(num)
 
 
 
 
+#Write a program to find the largest number in a list.
 
 
 
