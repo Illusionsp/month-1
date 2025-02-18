@@ -10,18 +10,3 @@ print(sum_list(my_numbers))  # Output: 15
 
 
 
-for num in range(2, 21, 2):  
-    print(num)
-
-
-
-
-
-
-def find_largest(numbers):
-    return max(numbers)
-
-# Example usage
-num_list = [10, 25, 6, 89, 45]
-largest = find_largest(num_list)
-print("The largest number is:", largest)
